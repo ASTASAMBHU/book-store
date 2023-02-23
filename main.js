@@ -3,7 +3,7 @@ let main_wrapper = document.getElementById('main');
 // console.log(main_wrapper);
 
 
-let fetch_url = 'https://www.googleapis.com/books/v1/volumes?q=react?maxResults=40';
+let fetch_url = 'https://www.googledfdapis.com/books/v1/volumes?q=react?maxResults=40';
 
 // fetch(fetch_url)
 
@@ -44,23 +44,25 @@ async function getData(url){
 
         let data = await response.json();
         // console.log(data);
-        appendData(data);
+        // appendData(data);
+        return data;
     }
 
-    catch{
-        console.log('Error');
+    catch(e){
+        console.log('Error',e);
     }
     
     
 }
 
-getData(fetch_url);
+// getData(fetch_url);
 
 
 
 function appendData(data){
+
     data.items.map(ids=>{
-        // console.log(ids.volumeInfo);
+        console.log(ids.volumeInfo);
         let {title,imageLinks,contentVersion,publisher} = ids.volumeInfo;
 
         let templateString = `<div class="card" style="width: 18rem;">
@@ -77,3 +79,10 @@ function appendData(data){
     });   
 }
 
+
+async function showData(){
+    let dataStore = await getData(fetch_url);
+    console.log(dataStore);
+    appendData(dataStore);
+}
+showData();
