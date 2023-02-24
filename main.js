@@ -38,16 +38,16 @@ async function getData(url){
 function appendData(data){
     main_wrapper.innerHTML="";
     data.items.map(ids=>{
-        let {title,imageLinks,contentVersion,publisher} = ids.volumeInfo;
-
+        let {title,imageLinks,contentVersion,publisher,publishedDate} = ids.volumeInfo;
+        let showYear = new Date(publishedDate).getFullYear();
         let templateString = `<div class="card" style="width: 18rem;">
-            <img src="${imageLinks.thumbnail}" class="card-img-top img-fluid" alt="Card Top Image">
-            <div class="card-body">
-            <p class="card-text">${contentVersion}</p>
-                <h6>${title}</h6>
-                <h4 class="mb-3">${publisher}<h4>
-                <a href="#" class="btn btn-primary">ADDING</a>
+            <img src="${imageLinks.thumbnail}" class="img-fluid" alt="Card Top Image">
+            <div class="card-body p-0">
+                <p class="card-text mt-3 content-version">${contentVersion}</p>
+                <h6 class="title">${title}</h6>
+                <h4 class="mb-3 publisher">${publisher}<h4>
             </div>
+            <p class="show-date">${showYear}</p>
         </div>`;
         main_wrapper.insertAdjacentHTML('beforeend',templateString);
                 

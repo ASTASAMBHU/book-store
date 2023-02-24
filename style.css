@@ -5,7 +5,7 @@
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Inter;
 }
 
 #main {
@@ -18,11 +18,39 @@ body{
 }
 .card{
     min-width: 200px;
+    position: relative;
+    border: none;
 }
-.card .card-img-top{
+.show-date{
+    position: absolute;
+    background-color: #13C296;
+    color: white;
+    right: 10px;
+    top: 10px;
+    padding: 6px 10px;
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 7px;
+}
+.card .img-fluid{
     max-height: 150px;
 }
 .form-control:focus{
     box-shadow: none;
     outline: none;
+}
+.content-version{
+    font-size: 14px;
+    font-weight: 600;
+    color: #7E7E7E;
+}
+.title{
+    font-size: 18px;
+    color: #7E7E7E;
+    font-weight: 600;
+}
+.publisher{
+    font-size: 16px;
+    font-weight: 600;
+    color: #212B36;
 }
