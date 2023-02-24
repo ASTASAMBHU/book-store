@@ -13,12 +13,16 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     row-gap: 30px;
-    column-gap: 50px;
+    column-gap: 20px;
 
 }
 .card{
-    min-width: 250px;
+    min-width: 200px;
 }
 .card .card-img-top{
-    max-height: 200px;
+    max-height: 150px;
+}
+.form-control:focus{
+    box-shadow: none;
+    outline: none;
 }
