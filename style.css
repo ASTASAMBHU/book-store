@@ -17,7 +17,7 @@ body{
 
 }
 .card{
-    min-width: 200px;
+    max-width: 250px;
     position: relative;
     border: none;
 }
@@ -33,9 +33,9 @@ body{
     border-radius: 7px;
 }
 .card .img-fluid{
-    max-height: 150px;
+    max-height: 200px;
 }
-.form-control:focus{
+.form-control:focus,.form-select:focus{
     box-shadow: none;
     outline: none;
 }
@@ -53,4 +53,18 @@ body{
     font-size: 16px;
     font-weight: 600;
     color: #212B36;
+}
+
+.select2-container--default .select2-selection--single{
+    padding: 4px 0;
+    height: 100%;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow{
+    top: 50%;
+    right: 1px;
+    width: 20px;
+    transform: translateY(-50%);
+}
+.select2-container--default .select2-selection--single .select2-selection__clear{
+    right: 10px;
 }
